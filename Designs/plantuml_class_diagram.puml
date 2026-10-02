@@ -1,0 +1,44 @@
+@startuml
+skinparam classAttributeIconSize 0
+class "Cart" as Cart {
+  - qtyOrdered: int
+  - items: DigitalVideoDisc[]
+  + final MAX_NUMBER_ORDERED: int
+  + addDVD(DigitalVideoDisc): void
+  + removeDVD(DigitalVideoDisc): void
+  + printItems(): void
+  + calculateTotalCost(): void
+  + createBill(): void
+  
+  + searchDVD(option: int): DigitalVideoDisc[]
+  - searchByName(String): DigitalVideoDisc[]
+  - searchByCategory(String): DigitalVideoDisc[]
+  - searchByCost(float): DigitalVideoDisc[]
+  
+  + sortDVD(option: int): void
+  - sortByName(): void
+  - sortByPrice(): void
+  
+  + placeOrder(): void
+}
+class "DigitalVideoDisc" as DigitalVideoDisc {
+  - title: String
+  - category: String
+  - director: String
+  - length: int
+  - cost: float
+  
+  + DigitalVideoDisc()
+  + getTitle(): String
+  + getCost(): float
+  + getCategory(): String
+  + getInfo(): void
+}
+class "Aims" as Aims {
+  + main(): void
+}
+
+Aims ..> Cart
+Aims ..> DigitalVideoDisc
+Cart --> DigitalVideoDisc
+@enduml
