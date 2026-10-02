@@ -1,0 +1,55 @@
+@startuml
+left to right direction
+actor "Customer" as c
+actor "Store Manager" as store_manager
+actor "Card Association System" as card_association_system
+rectangle "AIMS Project" {
+UseCase "Browse the DVD lists" as browse
+UseCase "Display orders" as display_orders
+UseCase "Search DVD" as search_dvd
+UseCase "Search by title" as search_title
+UseCase "Search by price" as search_price
+UseCase "Search by category" as search_category
+UseCase "Sort DVD" as sort_dvd
+UseCase "Play Demo" as play_demo
+UseCase "View Current Cart" as view_current_cart
+UseCase "View Detail Information" as view_detail_information
+UseCase "Sort by title" as sort_title
+UseCase "Sort by price" as sort_price
+UseCase "Update items in cart" as update_items
+UseCase "Place Order" as place_order
+UseCase "Call Payment System" as call_payment
+UseCase "Sign in" as sign_in
+UseCase "List Pending Orders" as list_pending
+UseCase "Approve/Reject Order" as process_order
+UseCase "Add New DVD" as add_new_dvd
+UseCase "Remove DVD" as remove_old_dvd
+}
+
+UseCase "Check Validation" as check_valid
+UseCase "Perform Transaction" as perform_trans
+
+c --> browse
+c --> display_orders
+c --> search_dvd
+c --> sort_dvd
+place_order ..> call_payment : <<include>>
+call_payment --> card_association_system
+card_association_system --> check_valid
+check_valid ..> perform_trans : <<extends>>
+c --> play_demo
+c --> view_detail_information
+c --> place_order
+c --> view_current_cart
+c --> update_items
+search_dvd ..> search_title : <<extends>>
+search_dvd ..> search_category : <<extends>>
+search_dvd ..> search_price : <<extends>>
+sort_dvd ..> sort_title : <<extends>>
+sort_dvd ..> sort_price : <<extends>
+store_manager --> sign_in 
+store_manager --> list_pending
+store_manager --> process_order
+store_manager --> add_new_dvd
+store_manager --> remove_old_dvd
+@enduml
