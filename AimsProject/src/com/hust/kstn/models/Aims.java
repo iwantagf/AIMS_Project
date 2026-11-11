@@ -1,3 +1,4 @@
+package AimsProject.src.com.hust.kstn.models;
 import java.util.Scanner;
 
 class Aims {

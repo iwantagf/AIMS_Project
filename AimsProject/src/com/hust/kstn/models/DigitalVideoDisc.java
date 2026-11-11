@@ -1,3 +1,4 @@
+package AimsProject.src.com.hust.kstn.models;
 class DigitalVideoDisc {
     private String title;
     private String category;
