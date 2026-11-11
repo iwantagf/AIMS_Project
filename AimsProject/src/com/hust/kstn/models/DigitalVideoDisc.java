@@ -1,17 +1,26 @@
-package AimsProject.src.com.hust.kstn.models;
-class DigitalVideoDisc {
+package com.hust.kstn.models;
+
+public class DigitalVideoDisc {
     private String title;
     private String category;
     private String director;
     private int length;
     private float cost;
 
-    DigitalVideoDisc(String title, String category, String director, int length, float cost) {
+    public DigitalVideoDisc(String title) {
+        this.title = title;
+    }
+
+    public DigitalVideoDisc(String title, String category, String director, int length, float cost) {
         this.title = title;
         this.category = category;
         this.director = director;
         this.length = length;
         this.cost = cost;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     public String getTitle() {

@@ -1,4 +1,4 @@
-package AimsProject.src.com.hust.kstn.models;
+package com.hust.kstn.models;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
@@ -20,14 +20,14 @@ class Cart {
     }
 
     public void addDVD(DigitalVideoDisc[] dvdList) {
-        if (this.qtyOrder == MAX_NUMBER_ORDERED) {
+        if (this.qtyOrdered == MAX_NUMBER_ORDERED) {
             System.out.println("The cart is almost full!");
             return;
         }
         
         for (DigitalVideoDisc dvd : dvdList) {
             if (this.qtyOrdered == MAX_NUMBER_ORDERED) {
-                System.out.println("The cart is almost full, stop adding DVD!")
+                System.out.println("The cart is almost full, stop adding DVD!");
                 System.out.println("The last DVD added: " + dvd.getTitle());
                 return;
             }
@@ -48,7 +48,7 @@ class Cart {
         this.qtyOrdered++;
         
         if (this.qtyOrdered == MAX_NUMBER_ORDERED) {
-            System.out.println("The cart is almost full, stop adding DVD!")
+            System.out.println("The cart is almost full, stop adding DVD!");
             System.out.println("The last DVD added: " + dvd1.getTitle());
             return;
         }
