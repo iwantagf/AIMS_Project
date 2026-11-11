@@ -1,6 +1,7 @@
 {
     "java.dependency.packagePresentation": "flat",
     "java.project.sourcePaths": [
-        "AimsProject/src"
+        "AimsProject/src",
+        "OtherProject/src"
     ]
 }
