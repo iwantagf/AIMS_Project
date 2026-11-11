@@ -3,7 +3,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
 
-class Cart {
+public class Cart {
     private static final int MAX_NUMBER_ORDERED = 20;
     private DigitalVideoDisc[] items = new DigitalVideoDisc[MAX_NUMBER_ORDERED];
     private int qtyOrdered = 0;
