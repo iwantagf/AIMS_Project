@@ -43,6 +43,11 @@ public class DigitalVideoDisc {
         return this.id;
     }
 
+    public String toString() {
+        String res = "[NAME]: " + this.title + "\n" + "[CATEGORY]: " + this.category + "\n" + "[DIRECTOR]: " + this.director;
+        return res;
+    }
+
     public void getInfo() {
         System.out.println("===========" + this.title + "===========");
         System.out.println("Category: " + this.category);
